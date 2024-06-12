@@ -8,7 +8,7 @@
 
 #include "Wheels.h"
 #include "LiquidCrystal_I2C.h"
-#include "PinChangeInterrupt.h"
+#include <PinChangeInterrupt.h>
 
 #define INTINPUT0 A0
 #define INTINPUT1 A1
@@ -31,9 +31,6 @@ LiquidCrystal_I2C lcd(LCDAddress, 16, 2);
 
 #define SET_MOVEMENT(side,f,b) digitalWrite( side[0], f);\
   digitalWrite( side[1], b)
-
-
-
 
 Wheels::Wheels()
 {
@@ -123,7 +120,7 @@ void Wheels::attach(int pRF, int pRB, int pRS, int pLF, int pLB, int pLS)
   lcd.init();
   lcd.backlight();
   lcd.setCursor(3, 0);
-  lcd.print("H3llo, w0rld!");
+  lcd.print("Hello, User!");
   // wheel sensors
   pinMode(INTINPUT0, INPUT);
   pinMode(INTINPUT1, INPUT);
